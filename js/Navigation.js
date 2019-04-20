@@ -507,26 +507,10 @@ var contentCategoryMenu = {
     Load: function () {
         $('#innerContent').css('margin-top', '0px');
 
-        if (location.protocol == 'file:') {
-            var content = categories.categoryItems[mainMenu.selectedItemIndex].Items[subMenu.selectedItemIndex + subMenu.topMenuIndex].content;
-            $('#innerContent').html(content);
-            contentCategoryMenu.AfterLoad();
-        } else {
-            var filename = categories.categoryItems[mainMenu.selectedItemIndex].Items[subMenu.selectedItemIndex + subMenu.topMenuIndex].file;
-            var params = {};
-            params['file'] = filename;
-
-            $.post("/editor/getcontent.php",
-                params,
-                function (data, status) {
-                    $('#innerContent').html(data);
-                    contentCategoryMenu.AfterLoad();
-                }
-          );
-        }
-
-
-
+        
+        var content = categories.categoryItems[mainMenu.selectedItemIndex].Items[subMenu.selectedItemIndex + subMenu.topMenuIndex].content;
+        $('#innerContent').html(content);
+        contentCategoryMenu.AfterLoad();
     },
 
     AfterLoad: function () {
