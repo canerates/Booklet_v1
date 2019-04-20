@@ -64,6 +64,23 @@ var keyEventListener = function (evt) {
     }
 };
 
+var KEYS = {
+            UP: 38,
+            DOWN: 40,
+            RIGHT: 39,
+            LEFT: 37,
+            BACKSPACE: 48,
+            OK: 13,
+            DEL: -7,
+            TAB: -9,
+            ESC: -27,
+            COMMA: -188,
+            PAGEUP: -33,
+            PAGEDOWN: -34,
+            NEXTPART: 0,
+            PREPART: 0
+};
+
 window.onload = StartMenu;
 
 var mainMenu = {
